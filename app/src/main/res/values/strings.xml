@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Final Project</string>
     <string name="search_title" />
+    <string name="disaster_icon">Disaster Icon</string>
 
     <string-array name="list_disaster_txt">
         <item>Banjir</item>
