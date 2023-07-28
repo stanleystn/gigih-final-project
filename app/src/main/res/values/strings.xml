@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">Final Project</string>
     <string name="search_title" />
+
+    <string-array name="list_disaster_txt">
+        <item>Banjir</item>
+        <item>Gempabumi</item>
+        <item>Angin Kencang</item>
+        <item>Kabut Asap</item>
+        <item>Kebakaran Hutan</item>
+        <item>Gunung Api</item>
+    </string-array>
+
+    <string-array name="list_disaster_desc_txt">
+        <item>Banjir di area tertentu</item>
+        <item>Gempabumi dengan skala</item>
+        <item>Angin Kencang dengan kecepatan</item>
+        <item>Kabut Asap di area tertentu</item>
+        <item>Kebakaran Hutan seluas</item>
+        <item>Gunung Api di daerah</item>
+    </string-array>
 </resources>
