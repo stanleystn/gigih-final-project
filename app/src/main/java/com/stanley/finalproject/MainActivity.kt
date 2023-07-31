@@ -2,60 +2,36 @@ package com.stanley.finalproject
 
 import android.os.Bundle
 import android.widget.SearchView
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.stanley.finalproject.ui.theme.FinalProjectTheme
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchView: SearchView
+    private var dList = ArrayList<DisasterData>()
+    private lateinit var adapter: DisasterAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            FinalProjectTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    recyclerView = findViewById(R.id.recyclerView)
-                    searchView = findViewById(R.id.searchView)
+        setContentView(R.layout.activity_main)
 
-                    recyclerView.setHasFixedSize(true)
-                    recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView = findViewById(R.id.recyclerView)
+        searchView = findViewById(R.id.searchView)
 
-                    addDataToList()
-                }
-            }
-        }
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        addDataToList()
+        adapter = DisasterAdapter(dList)
+        recyclerView.adapter = adapter
     }
-    private fun addDataToList(){
 
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    FinalProjectTheme {
-        Greeting("Android")
+    private fun addDataToList() {
+        dList.add(DisasterData(R.drawable.disaster_icon, "Title", "Desc1"))
+        dList.add(DisasterData(R.drawable.disaster_icon, "Title", "Desc2"))
+        dList.add(DisasterData(R.drawable.disaster_icon, "Title", "Desc3"))
+        dList.add(DisasterData(R.drawable.disaster_icon, "Title", "Desc4"))
+        dList.add(DisasterData(R.drawable.disaster_icon, "Title", "Desc5"))
     }
 }
