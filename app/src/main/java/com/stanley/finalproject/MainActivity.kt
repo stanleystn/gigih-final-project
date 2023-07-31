@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var searchView: SearchView
     private var dList = ArrayList<DisasterData>()
     private lateinit var adapter: DisasterAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
